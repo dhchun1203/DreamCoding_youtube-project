@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+}
+
+.banner {
+  display: flex;
+  background-color: black;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner__logo {
+  display: flex;
+  margin-left: 14px;
+  align-items: center;
+}
+
+.banner__logo a {
+  font-family: "Oswald", sans-serif;
+  text-decoration: none;
+  color: red;
+}
+
+.banner__logo__text a {
+  color: white;
+  margin-left: 5px;
+  font-size: 15px;
+}
+
+.banenr__logo__img a {
+  color: red;
+  border: none;
+  background-color: black;
+}
+
+.banner__icons {
+  display: flex;
+}
+.banner__icons button {
+  text-decoration: none;
+  border: none;
+  background-color: black;
+  color: white;
+  align-items: center;
+}
+.banner__icons__search {
+  font-size: 15px;
+  margin-right: 10px;
+}
+.banner__icons__setup {
+  font-size: 15px;
+  margin-right: 10px;
+}
+.player__source {
+  font-size: 130px;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+.player__source i {
+  margin-top: 14px;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 10px 6px 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e0e0e0;
+}
+.info__tag a {
+  text-decoration: none;
+  font-size: 0.6rem;
+  font-weight: 400;
+  color: #1976d2;
+}
+.info__description {
+  display: flex;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: black;
+}
+.info__viewer {
+  font-size: 0.4rem;
+  font-weight: 400;
+  color: gray;
+}
+.button button {
+  border: none;
+  background-color: white;
+}
+.icons {
+  display: flex;
+  justify-content: space-around;
+}
+.icons button {
+  border: none;
+  background-color: white;
+  font-size: 0.8rem;
+}
+.icons button:active,
+:hover {
+  color: #1976d2;
+}
+.profile {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 10px 6px 10px;
+  border-bottom: 2px solid #e0e0e0;
+}
+.profile__content {
+  display: flex;
+}
+.profile__img {
+  margin-left: 10px;
+  font-size: 30px;
+  color: black;
+  text-decoration: none;
+}
+
+.profile__name {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding-top: 2px;
+  margin-left: 8px;
+  color: black;
+}
+.profile__name a {
+  text-decoration: none;
+  color: black;
+}
+
+.sub_no {
+  font-size: 0.4rem;
+  color: gray;
+}
+
+.subscribe button {
+  border: none;
+  background-color: white;
+  color: red;
+  font-weight: 500;
+  margin-top: 6px;
+}
