@@ -1,143 +1,252 @@
-body {
+:root {
+  /* Color */
+  --white-color: #fff;
+  --black-color: #140a00;
+  --blue-color: #045fd4;
+  --red-color: #ff0000;
+  --gray-dark-color: #909090;
+  --gray-light-color: #e0e0e0;
+
+  /* Size */
+  --padding: 12px;
+  --avatar-size: 36px;
+  /* Font size */
+  --font-large: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+}
+
+* {
+  padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
-.banner {
+body {
+  font-family: Roboto;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: var(--white-color);
+}
+
+/* Header */
+header {
   display: flex;
-  background-color: black;
   justify-content: space-between;
-  align-items: center;
+  padding: var(--padding);
+  background-color: var(--black-color);
+  color: var(--white-color);
 }
 
-.banner__logo {
-  display: flex;
-  margin-left: 14px;
-  align-items: center;
+header .logo {
+  font-size: var(--font-large);
+  font-weight: 1000;
 }
 
-.banner__logo a {
-  font-family: "Oswald", sans-serif;
-  text-decoration: none;
-  color: red;
+header .logo i {
+  color: var(--red-color);
 }
 
-.banner__logo__text a {
-  color: white;
-  margin-left: 5px;
-  font-size: 15px;
+header .icons .fa-search {
+  margin-right: var(--padding);
 }
-
-.banenr__logo__img a {
-  color: red;
-  border: none;
-  background-color: black;
-}
-
-.banner__icons {
-  display: flex;
-}
-.banner__icons button {
-  text-decoration: none;
-  border: none;
-  background-color: black;
-  color: white;
-  align-items: center;
-}
-.banner__icons__search {
-  font-size: 15px;
-  margin-right: 10px;
-}
-.banner__icons__setup {
-  font-size: 15px;
-  margin-right: 10px;
-}
-.player__source {
-  font-size: 130px;
-  background-color: black;
-  color: white;
+/* Video Player */
+.player {
+  position: sticky;
+  top: 0;
+  /* 어디로 포지셔닝 할건지 지정을 해줘야한다. */
   text-align: center;
+  background-color: var(--black-color);
 }
-.player__source i {
-  margin-top: 14px;
+.player video {
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
 }
-.info {
+
+body > .info {
+  padding: var(--padding);
+}
+
+.info .metadata .hashtags {
   display: flex;
-  flex-direction: column;
-  margin: 0px 10px 6px 10px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #e0e0e0;
+  font-size: var(--font-small);
+  color: var(--blue-color);
 }
-.info__tag a {
-  text-decoration: none;
-  font-size: 0.6rem;
-  font-weight: 400;
-  color: #1976d2;
+
+.info .metadata .hashtags li {
+  margin-right: var(--padding);
 }
-.info__description {
+
+.info .metadata .titleAndButton {
   display: flex;
-  font-size: 0.8rem;
-  font-weight: 400;
-  color: black;
 }
-.info__viewer {
-  font-size: 0.4rem;
-  font-weight: 400;
-  color: gray;
+
+.info .metadata .titleAndButton .title {
+  font-size: var(--font-medium);
+  margin-right: var(--padding);
 }
-.button button {
-  border: none;
-  background-color: white;
+
+.info .metadata .titleAndButton .title.clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
-.icons {
+
+.info .metadata .titleAndButton .moreBtn {
+  height: 100%;
+  transition: transform 300ms ease-in-out;
+  /* animation 효과를 적용 */
+}
+
+.info .metadata .titleAndButton .moreBtn.clicked {
+  transform: rotate(180deg);
+  /* 180도 회전시킴 */
+}
+
+.info .metadata .views {
+  font-size: var(--font-small);
+  color: var(--gray-dark-color);
+}
+
+.info .actions {
   display: flex;
   justify-content: space-around;
+  margin: var(--padding) 0;
 }
-.icons button {
-  border: none;
-  background-color: white;
-  font-size: 0.8rem;
+
+.info .actions button {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-small);
+  color: var(--gray-dark-color);
 }
-.icons button:active,
-:hover {
-  color: #1976d2;
+
+.info .actions button i {
+  margin: 0 auto;
+  /* margin의 right left를 auto로 설정하면 center와 같은 효과를 볼 수 있다. */
+  margin-bottom: calc(var(--font-small) / 2);
+  /* margin 다음에 선언했기 때문에 overwrite 됨 */
+  font-size: 16px;
 }
-.profile {
+
+.info .actions i.active {
+  color: var(--blue-color);
+}
+
+/* Channel Description */
+.channel {
   display: flex;
   justify-content: space-between;
-  margin: 0px 10px 6px 10px;
-  border-bottom: 2px solid #e0e0e0;
+  border-top: 1px solid var(--gray-light-color);
+  border-bottom: 1px solid var(--gray-light-color);
 }
-.profile__content {
+
+.channel .metadata {
   display: flex;
+  align-items: center;
+  margin-left: var(--padding);
 }
-.profile__img {
-  margin-left: 10px;
-  font-size: 30px;
-  color: black;
-  text-decoration: none;
+.channel .metadata .info {
+  display: flex;
+  flex-direction: column;
+  margin-left: var(--padding);
 }
-
-.profile__name {
-  font-size: 0.65rem;
-  font-weight: 600;
-  padding-top: 2px;
-  margin-left: 8px;
-  color: black;
-}
-.profile__name a {
-  text-decoration: none;
-  color: black;
+.channel .metadata img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
 }
 
-.sub_no {
-  font-size: 0.4rem;
-  color: gray;
+.channel .metadata .info .name {
+  font-size: var(--font-medium);
 }
 
-.subscribe button {
-  border: none;
-  background-color: white;
-  color: red;
-  font-weight: 500;
-  margin-top: 6px;
+.channel .metadata .info .subscribers {
+  font-size: var(--font-small);
+  color: var(--gray-dark-color);
+}
+
+.channel .subscribe {
+  text-transform: uppercase;
+  color: var(--red-color);
+  font-size: var(--font-medium);
+  margin-right: var(--padding);
+}
+
+/* Up Next */
+.upNext {
+  padding: 0 var(--padding);
+}
+
+.upNext > .title {
+  /* 바로 뒤의 자식노드를 셀렉하고 싶다면 > 를 사용하면 된다 */
+  font-size: var(--font-medium);
+  color: var(--gray-dark-color);
+  margin-bottom: calc(var(--padding) / 2);
+}
+
+.upNext .item {
+  display: flex;
+  margin-top: var(--padding);
+}
+
+.upNext .item .img {
+  flex: 1 1 35%;
+  margin-right: var(--padding);
+}
+
+.upNext .item .img img {
+  width: 100%;
+}
+/* 
+img태그가 flex 속성에 반응하지 않는다면 
+img태그를 div로 묶어서 width를 100%를 주면 해결할 수 있다. 
+*/
+
+.upNext .item .info {
+  flex: 1 1 60%;
+}
+.upNext .item .info .title {
+  font-size: var(--font-medium);
+}
+.upNext .item .info .name {
+  font-size: var(--font-small);
+  color: var(--gray-dark-color);
+}
+.upNext .item .info .views {
+  font-size: var(--font-micro);
+  color: var(--gray-dark-color);
+}
+
+.upNext .item .moreBtn {
+  flex: 1 1 5%;
+}
+
+.upNext .item .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.infoAndUpNext {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .infoAndUpNext {
+    flex-direction: row;
+    margin: var(--padding) 0;
+  }
 }

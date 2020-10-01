@@ -7,85 +7,131 @@
       src="https://kit.fontawesome.com/8b98a99811.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="style.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
       rel="stylesheet"
     />
-    <title>HwanTube</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+    <title>Youtube Mobile</title>
   </head>
   <body>
-    <nav class="banner">
-      <div class="banner__logo">
-        <div class="banner__logo__img">
-          <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="banner__logo__text">
-          <a href="#">Youtube</a>
-        </div>
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <i class="fab fa-youtube"></i>
+        <span class="title">Youtube</span>
       </div>
-      <div class="banner__icons">
-        <div class="banner__icons__search">
-          <button><i class="fas fa-search"></i></button>
-        </div>
-        <div class="banner__icons__setup">
-          <button><i class="fas fa-ellipsis-v"></i></button>
-        </div>
-      </div>
-    </nav>
-    <section class="player">
-      <div class="player__source">
-        <i class="far fa-play-circle"></i>
-      </div>
-    </section>
-    <section class="info">
-      <div class="info__tag">
-        <a href="#">#Dreamcoding</a>
-        <a href="#">#Dreamcoders</a>
-        <a href="#">#Ellie</a>
-      </div>
-      <div class="info__description">
-        <div class="info__description__content">
-          클론코딩 유튜브 사이트 따라 만들기(HTML+CSS 연습편, 웹 포트폴리오) |
-          프론트엔드 개발자 입문편: HTML, CSS, Javascript
-        </div>
-        <div class="button">
-          <button><i class="fas fa-sort-down"></i></button>
-        </div>
-      </div>
-      <div class="info__viewer">1M views 1 month ago</div>
       <div class="icons">
-        <div class="icon1">
-          <button><i class="fas fa-thumbs-up"></i></button>
-        </div>
-        <div class="icon2">
-          <button><i class="fas fa-thumbs-down"></i></button>
-        </div>
-        <div class="icon3">
-          <button><i class="fas fa-share"></i></button>
-        </div>
-        <div class="icon4">
-          <button><i class="fas fa-plus"></i></button>
-        </div>
-        <div class="icon5">
-          <button><i class="fas fa-flag"></i></button>
-        </div>
+        <i class="fas fa-search"></i>
+        <i class="fas fa-ellipsis-v"></i>
       </div>
+    </header>
+    <!-- Videa Player -->
+    <section class="player">
+      <video
+        controls
+        src="../클론코딩 유튜브 사이트 따라 만들기(HTML+CSS 연습편, 웹 포트폴리오) - 프론트엔드 개발자 입문편- HTML, CSS, Javascript.mp4"
+      ></video>
     </section>
-    <section class="profile">
-      <div class="profile__content">
-        <a href="#" class="profile__img">
-          <i class="fas fa-user-circle"></i>
-        </a>
-        <div class="profile__name">
-          <a href="#" class="id">드림코딩 by 환</a>
-          <div class="sub_no">1M subscribers</div>
+    <!-- Video infomation -->
+    <div class="infoAndUpNext">
+      <section class="info">
+        <!-- Metadata -->
+        <div class="metadata">
+          <ul class="hashtags">
+            <li>#DreamCoding</li>
+            <li>#DreamCoders</li>
+            <li>#Ellie</li>
+          </ul>
+          <div class="titleAndButton">
+            <span class="title clamp">
+              Clone Coding: Youtube Mobile Website 유튜브 모바일 웹사이트 따라
+              만들기 | 프론트엔드 개발자 입문편: HTML, CSS, JavaScript
+              드림코딩과 함께하는 프론트엔드 실전 입문편
+            </span>
+            <button class="moreBtn"><i class="fas fa-caret-down"></i></button>
+          </div>
+          <span class="views">1M views 1 months ago</span>
         </div>
-      </div>
-      <div class="subscribe">
-        <button>SUBSCRIBE</button>
-      </div>
-    </section>
-    <section></section>
+        <!-- Actions -->
+        <ul class="actions">
+          <li>
+            <button>
+              <i class="active fas fa-thumbs-up"></i><span>1K</span>
+            </button>
+          </li>
+          <li>
+            <button><i class="fas fa-thumbs-down"></i><span>0</span></button>
+          </li>
+          <li>
+            <button><i class="fas fa-share"></i><span>Share</span></button>
+          </li>
+          <li>
+            <button><i class="fas fa-plus"></i><span>Save</span></button>
+          </li>
+          <li>
+            <button>
+              <i class="fab fa-font-awesome-flag"></i><span>Report</span>
+            </button>
+          </li>
+        </ul>
+        <!-- Channel Description -->
+        <div class="channel">
+          <div class="metadata">
+            <img src="images/증명사진.jpg" alt="" />
+            <div class="info">
+              <span class="name">드림코딩 by 환</span>
+              <span class="subscribers">1M subscribers</span>
+            </div>
+          </div>
+          <button class="subscribe">subscribe</button>
+        </div>
+      </section>
+      <section class="upNext">
+        <span class="title">Up next</span>
+        <ul>
+          <li class="item">
+            <div class="img"><img src="images/upNext1.jpg" alt="" /></div>
+            <div class="info">
+              <span class="title"
+                >프론트엔드 강의, 프론트엔드 개발자가 되고 싶다면? 웹개발
+                입문다편 강의를 시작합니다(HTML, CSS, JavaScript + 실전
+                프로젝트)
+              </span>
+              <span class="name">드림코딩 by 환</span>
+              <span class="views">82K views</span>
+            </div>
+            <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+          </li>
+          <li class="item">
+            <div class="img"><img src="images/upNext1.jpg" alt="" /></div>
+            <div class="info">
+              <span class="title">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit
+                error debitis explicabo dolores voluptate beatae ut animi
+                expedita
+              </span>
+              <span class="name">드림코딩 by 환</span>
+              <span class="views">74K views</span>
+            </div>
+            <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+          </li>
+          <li class="item">
+            <div class="img"><img src="images/upNext1.jpg" alt="" /></div>
+            <div class="info">
+              <span class="title">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit
+                error debitis explicabo dolores voluptate beatae ut animi
+                expedita
+              </span>
+              <span class="name">드림코딩 by 환</span>
+              <span class="views">98K views</span>
+            </div>
+            <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+          </li>
+        </ul>
+      </section>
+    </div>
   </body>
 </html>
